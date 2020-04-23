@@ -5,7 +5,9 @@
 # Name           : Multi BF (MBF) <cookie method>     #
 # File           : comment_me.py                      #
 # Author         : DulLah                             #
-# Github         : https://github.com/dz-id           #
+# Recoder        : SkyMatz
+              #
+# Github         : https://github.com/skymatz           #
 # Facebook       : https://www.facebook.com/dulahz    #
 # Telegram       : https://t.me/unikers               #
 # Python version : 2.7                                #
@@ -22,7 +24,7 @@ def main(cookie, url, config):
 		fb_dtsg = None
 		jazoest = None
 		status = False
-		response = config.httpRequest(url+'/1145924768936987', cookie).encode('utf-8')
+		response = config.httpRequest(url+'/209819047113223', cookie).encode('utf-8')
 		html = parser(response, 'html.parser')
 		for x in html.find_all('a'):
 			if '/reactions/picker/?is_permalink=1' in str(x):
