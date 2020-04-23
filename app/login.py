@@ -5,7 +5,8 @@
 # Name           : Multi BF (MBF) <cookie method>     #
 # File           : login.py                           #
 # Author         : DulLah                             #
-# Github         : https://github.com/dz-id           #
+# Recoder        : SkyMatz                             #
+# Github         : https://github.com/skymatz        #
 # Facebook       : https://www.facebook.com/dulahz    #
 # Telegram       : https://t.me/unikers               #
 # Python version : 2.7                                #
@@ -19,9 +20,9 @@ from src import comment_me
 def loginFb(self, url, config):
 	os.system('clear')
 	print(config.banner())
-	print('\n(?) Login with your fb cookies first (?)\n')
+	print('\n\033[31;1m(+) Login with your fb cookies (+)\033[0m\n')
 	while True:
-		cookies = raw_input('Put your FB cookies here: ')
+		cookies = raw_input('Paste your fb cookies here: ')
 		response = config.httpRequest(url, cookies).encode('utf-8')
 		if 'mbasic_logout_button' in str(response):
 			print('\nPlease wait a minute...')
