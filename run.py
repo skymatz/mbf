@@ -5,9 +5,10 @@
 # Name           : Multi BF (MBF) <cookie method>     #
 # File           : run.py                             #
 # Author         : DulLah                             #
-# Github         : https://github.com/dz-id           #
-# Facebook       : https://www.facebook.com/dulahz    #
-# Telegram       : https://t.me/unikers               #
+# Recoder        : Skymatz                            #
+# Github         : https://github.com/skymatz         #
+# Facebook       : https://www.facebook.com/amtpages  #
+# Telegram       : https://t.me/                      #
 # Python version : 2.7                                #
 #######################################################
 
