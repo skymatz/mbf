@@ -5,7 +5,8 @@
 # Name           : Multi BF (MBF) <cookie method>     #
 # File           : config.py                          #
 # Author         : DulLah                             #
-# Github         : https://github.com/dz-id           #
+# Recoder        : SkyMatz                             #
+# Github         : https://github.com/skymatz           #
 # Facebook       : https://www.facebook.com/dulahz    #
 # Telegram       : https://t.me/unikers               #
 # Python version : 2.7                                #
@@ -25,10 +26,19 @@ class Config:
 
 	def banner(self):
 		return '''\n
-\033[0;96m   __  ___     ____  _   ___  ____
-\033[0;96m  /  |/  /_ __/ / /_(_) / _ )/ __/  \033[0m|| Created By DulLah
-\033[0;96m / /|_/ / // / / __/ / / _  / _/    \033[0m|| Github.com/dz-id
-\033[0;96m/_/  /_/\_,_/_/\__/_/ /____/_/ \033[0;91mv2.0 \033[0m|| FB.me/dulahz'''
+
+\033[0;96m    __  _____    ____   ______            __   _          
+   /  |/  / /_  / __/  / ____/___  ____  / /__(_)__  _____
+  / /|_/ / __ \/ /_   / /   / __ \/ __ \/ //_/ / _ \/ ___/
+ / /  / / /_/ / __/  / /___/ /_/ / /_/ / ,< / /  __(__  ) 
+/_/  /_/_.___/_/     \____/\____/\____/_/|_/_/\___/____/ \033[33;6mv1.0 \033[0m
+
+\033[0;32m[+]=====================================================[+]
+[+] Author   : SkyMatz                                  [+]
+[+] Github   : https://github.com/skymatz               [+]
+[+] Facebook : https://facebook.com/amtpags             [+]
+[+]=====================================================[+]
+\033[0m '''
 
 	def httpRequest(self, url, cookies):
 		try:
