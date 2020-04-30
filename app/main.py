@@ -5,8 +5,8 @@
 # Name           : Multi BF (MBF) <cookie method>     #
 # File           : main.py                            #
 # Author         : DulLah                             #
-# Recoder        : SkyMatz                             #
-# Github         : https://github.com/skymatz        #
+# Recoder        : SkyMatz                            #
+# Github         : https://github.com/skymatz         #
 # Facebook       : https://www.facebook.com/dulahz    #
 # Telegram       : https://t.me/unikers               #
 # Python version : 2.7                                #
@@ -28,12 +28,12 @@ class Brute(object):
 		self.config = config.Config()
 		self.cookie = self.config.loadCookie()
 		self.menu = '\n'
-		self.menu += '  [ \033[0;96m01\033[0m ]  Dump Id Friends lists\n'
-		self.menu += '  [ \033[0;96m02\033[0m ]  Dump Id Friends\n'
-		self.menu += '  [ \033[0;96m03\033[0m ]  Dump Id by Search name\n'
-		self.menu += '  [ \033[0;96m04\033[0m ]  Dump Id from likes status\n'
-		self.menu += '  [ \033[0;96m05\033[0m ]  Start Crack\n'
-		self.menu += '  [ \033[0;96m00\033[0m ]  Remove cookies\n'
+		self.menu = '\n'
+		self.menu += '  01. Dump ID Temen\n'
+		self.menu += '  02. Dump ID Cari nama\n'
+		self.menu += '  03. Dump ID Dari like status\n'
+		self.menu += '  04. Mulai Crack\n'
+		self.menu += '  99. Hapus cookies\n'
 		if self.cookie == False:
 			login.loginFb(self, self.url, self.config)
 			self.cookie = self.config.loadCookie()
@@ -44,7 +44,7 @@ class Brute(object):
 			self.main(response)
 		else:
 			os.remove('log/cookies.log')
-			print('\n\033[0;91m[WARNING] Cookies invalids, please login again.\033[0m')
+			print('\n\033[0;91m[•] Cookies tidak valid, coba lagi.\033[0m')
 			raw_input('\n[ Press Enter]')
 			login.loginFb(self, self.url, self.config)
 			self.cookie = self.config.loadCookie()
@@ -55,37 +55,35 @@ class Brute(object):
 		os.system('clear')
 		print(self.config.banner())
 		html = parser(response, 'html.parser')
-		print('_________________________________________________________')
-		print('\n(\033[0;96m•\033[0m) ACTIVE USER : '.decode('utf-8')+html.title.text.upper())
-		print('_________________________________________________________')
+		print('\n Pengguna Aktif : '.decode('utf-8')+html.title.text.upper())
 		print(self.menu)
 		try:
-			choose = int(raw_input('Choose >> '))
+			choose = int(raw_input(' Pilih Angka : '))
 		except ValueError:
-			exit('\n\033[0;91mYou stuppid.\033[0m')
-		if choose == 1:
+			exit('\n\033[0;91mPake angka coek;v\033[0m')
+		if choose == 199:
 			exit(friends_list.main(self, self.cookie, self.url, self.config))
-		elif choose == 2:
+		elif choose == 1:
 			exit(friends.main(self, self.cookie, self.url, self.config))
-		elif choose == 3:
+		elif choose == 2:
 			exit(search_name.main(self, self.cookie, self.url, self.config))
-		elif choose == 4:
+		elif choose == 3:
 			exit(likes.main(self, self.cookie, self.url, self.config))
-		elif choose == 5:
+		elif choose == 4:
 			exit(crack.Brute().main())
-		elif choose == 0:
-			ask = raw_input('\nAre you Sure? [y/N]: ')
+		elif choose == 99:
+			ask = raw_input('\nYakin lu coek? [y/n]: ')
 			if ask.lower() == 'y':
-				print('\nRemoving cookies...')
+				print('\nMenghapus cookies...')
 				time.sleep(2)
 				os.remove('log/cookies.log')
-				print('\n\033[0;92mSuccess removed!\033[0m')
+				print('\n\033[0;92mBerhasil dihapus ea;v\033[0m')
 				time.sleep(2)
 				login.loginFb(self, self.url, self.config)
 				self.cookie = self.config.loadCookie()
 				self.start()
 			else:
 				self.cookie = self.config.loadCookie()
-				print('\ncanceled!')
+				print('\nbatal;v!')
 				self.start()
-		else: exit('\n\033[0;91mYou stuppid.\033[0m')
+		else: exit('\n\033[0;91mLiat list gblk;v\033[0m')
