@@ -64,7 +64,7 @@ class Brute:
 						break
 				except: pass
 				sys.stdout.write(
-					'\r[\033[0;96m{}\033[0m] Ngecrack... {}/{} OK-> CP-> '.format(datetime.now().strftime('%H:%M:%S'), self.loop, len(self.target), len(self.ok), len(self.cp))
+					'\r[\033[0;96m{}\033[0m] Ngecrack... {}/{} OK -> •{} CP -> •{} '.format(datetime.now().strftime('%H:%M:%S'), self.loop, len(self.target), len(self.ok), len(self.cp))
 				); sys.stdout.flush()
 		else:
 			self.loop +=1
@@ -76,12 +76,12 @@ class Brute:
 						break
 				except: pass
 				sys.stdout.write(
-					'\r[\033[0;96m{}\033[0m] Ngecrack... {}/{} OK-> CP-> '.format(datetime.now().strftime('%H:%M:%S'), self.loop, len(self.target), len(self.ok), len(self.cp))
+					'\r[\033[0;96m{}\033[0m] Ngecrack... {}/{} OK -> •{} CP -> •{} '.format(datetime.now().strftime('%H:%M:%S'), self.loop, len(self.target), len(self.ok), len(self.cp))
 				); sys.stdout.flush()
 
 	def main(self):
 		while True:
-			file = raw_input('\nDaftar id (ex: dump/xxx.json): ')
+			file = raw_input('\nDaftar id (ex: dump/xxx.json) : ')
 			try:
 				list = open(file, 'r').read()
 				object = json.loads(list)
@@ -123,7 +123,7 @@ class Brute:
 			except: pass
 		if len(self.target) == 0:
 			exit("\n\033[0;91m Upps, g ada coek\033[0m")
-		ask = raw_input('pake k-sandi default/manual? [d/m]: ')
+		ask = raw_input('pake k-sandi default/manual? [d/m] : ')
 		if ask.lower() == 'm':
 			while True:
 				print('\n\033[0;92mSetel k-sandi (,) untuk k-sandi baru, Ex: sayang,doraemon,indonesia\n\033[0m')
@@ -138,11 +138,11 @@ class Brute:
 	def results(self):
 		if (len(self.ok) != 0):
 			print('\n\nOK: '+str(len(self.ok)))
-			for i in self.ok: print('\033[0;92m[✓] ' +str(i)+'\033[0m')
+			for i in self.ok: print('\033[0;92m[✓] ' +str(i) +'\033[0m')
 			print('Hasil OK tersimpan di: out/ok.txt')
 		if (len(self.cp) != 0):
 			print('\n\nCP: '+str(len(self.cp)))
-			for i in self.cp: print('\033[0;93[×] '+str(i)+'\033[0m')
+			for i in self.cp: print('\033[0;93m[x] ' +str(i) +'\033[0m')
 			print('Hasil CP tersimpan di: out/cp.txt')
 		if (len(self.cp) == 0 and len(self.ok) == 0):
 			print('\n\n\033[0;91mG dpt apa" coek ;)\033[0m')
