@@ -5,9 +5,8 @@
 # Name           : Multi BF (MBF) <cookie method>     #
 # File           : friends.py                         #
 # Author         : DulLah                             #
-# Recoder        : SkyMatz
-               #
-# Github         : https://github.com/skymatz       #
+# Recoder        : SkyMatz                            #
+# Github         : https://github.com/skymatz         #
 # Facebook       : https://www.facebook.com/dulahz    #
 # Telegram       : https://t.me/unikers               #
 # Python version : 2.7                                #
@@ -18,18 +17,18 @@ from bs4 import BeautifulSoup as parser
 from datetime import datetime
 
 def main(self, cookie, url, config):
-	flist = raw_input('\nEnter friends list url: ')
+	flist = raw_input('\nPaste url daftar teman : ')
 	try:
 		domain = flist.split('//')[1].split('/')[0]
 		flist = flist.replace(domain, 'mbasic.facebook.com')
 	except IndexError:
-		exit('\n\033[0;91mInvalids url!\033[0m')
+		exit('\n\033[0;91mUrl tidak valid!\033[0m')
 
 	output = re.findall('https:\/\/.*?\/(.*?)\/friends\?lst=', flist)
 	_output = re.findall('id=(.*?)&refid=', flist)
 
 	if len(output) == 0 and len(_output) == 0:
-		exit('\n\033[0;91mInvalids url!\033[0m')
+		exit('\n\033[0;91mUrl tidak valid!\033[0m')
 	elif len(output) != 0:
 		output = 'dump/'+output[0]+'.json'
 	else:
@@ -53,7 +52,7 @@ def main(self, cookie, url, config):
 						uid = re.findall('/(.*?)\?fref=',find['href'])
 					if len(uid) == 1:
 						id.append({'uid': uid[0], 'name': full_name})
-					sys.stdout.write("\r - %s                                        \r\n[\033[0;96m%s\033[0m] [\033[0;91m%s\033[0m] Writing Id don't close."%(
+					sys.stdout.write("\r - %s                                        \r\n[\033[0;96m%s\033[0m] [\033[0;91m%s\033[0m] Penulisan ID, Jangan tutup."%(
 						full_name, datetime.now().strftime('%H:%M:%S'), len(id)
 					)); sys.stdout.flush()
 			if 'Lihat Teman Lain' in str(html):
