@@ -51,7 +51,7 @@ def main(self, cookie, url, config):
 						uid = re.findall('/(.*?)\?refid=', str(i))
 					if len(uid) == 1:
 						id.append({'uid': uid[0], 'name': full_name})
-					sys.stdout.write("\r - %s                                        \r\n[\033[0;96m%s\033[0m] [\033[0;91m%s\033[0m] Penulisan ID, Jangan tutup."%(
+					sys.stdout.write("\r • %s                                        \r\n[\033[0;96m%s\033[0m] [\033[0;91m%s\033[0m]"%(
 						full_name, datetime.now().strftime('%H:%M:%S'), len(id)
 					)); sys.stdout.flush()
 					if len(id) == max or len(id) > max:
