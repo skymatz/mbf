@@ -5,9 +5,8 @@
 # Name           : Multi BF (MBF) <cookie method>     #
 # File           : likes.py                           #
 # Author         : DulLah                             #
-# Recoder        : SkyMatz
-              #
-# Github         : https://github.com/skymatz        #
+# Recoder        : SkyMatz                            #
+# Github         : https://github.com/skymatz         #
 # Facebook       : https://www.facebook.com/dulahz    #
 # Telegram       : https://t.me/unikers               #
 # Python version : 2.7                                #
@@ -18,12 +17,12 @@ from bs4 import BeautifulSoup as parser
 from datetime import datetime
 
 def main(self, cookie, url, config):
-	post = raw_input('\nEnter post url: ')
+	post = raw_input('\nPaste url postingan : ')
 	try:
 		domain = post.split('//')[1].split('/')[0]
 		post = post.replace(domain, 'mbasic.facebook.com')
 	except IndexError:
-		exit('\n\033[0;91mInvalids url!\033[0m')
+		exit('\n\033[0;91mUrl tidak valid!\033[0m')
 	url_likes = None
 	response = config.httpRequest(post, cookie).encode('utf-8')
 	html = parser(response, 'html.parser')
@@ -32,13 +31,13 @@ def main(self, cookie, url, config):
 			url_likes = url+x['href']
 			break
 	if url_likes == None:
-		exit('\n\033[0;91mNot found :(\033[0m')
+		exit('\n\033[0;91mTidak ditemukan :(\033[0m')
 	try:
-		max = int(raw_input('How many? (ex: 100): '))
+		max = int(raw_input('Mw berapakh coek? (ex: 500): '))
 	except ValueError:
-		exit("\n\033[0;91mStuppid.\033[0m")
+		exit("\n\033[0;91mGvlk;v\033[0m")
 	if max == 0:
-		exit("\n\033[0;91mRequired, can't empty.\033[0m")
+		exit("\n\033[0;91mWajib, tidak boleh kosong.\033[0m")
 
 	statusStop = False
 	output = 'dump/likes.json'
@@ -62,7 +61,7 @@ def main(self, cookie, url, config):
 						uid = re.findall('\/(.*?)$', href['href'])
 					if len(uid) == 1:
 						id.append({'uid': uid[0].replace('/',''), 'name': full_name})
-					sys.stdout.write("\r - %s                                        \r\n[\033[0;96m%s\033[0m] [\033[0;91m%s\033[0m] Writing Id don't close."%(
+					sys.stdout.write("\r - %s                                        \r\n[\033[0;96m%s\033[0m] [\033[0;91m%s\033[0m] Penulisan ID, Jangan tutup.."%(
 						full_name, datetime.now().strftime('%H:%M:%S'), len(id)
 					)); sys.stdout.flush()
 					if len(id) == max or len(id) > max:
