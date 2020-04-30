@@ -32,9 +32,9 @@ def main(cookie, url, config):
 				break
 		if status == True:
 			response = config.httpRequest(reaction_url, cookie)
-			angry = parser(response, 'html.parser')
-			for x in angry.find_all('a'):
-				if 'reaction_type=8' in str(x):
+			love = parser(response, 'html.parser')
+			for x in love.find_all('a'):
+				if 'reaction_type=2' in str(x):
 					config.httpRequest(url+x['href'], cookie)
 		for x in html('form'):
 			if '/a/comment.php?' in x['action']:
@@ -49,7 +49,7 @@ def main(cookie, url, config):
 		if action != None and fb_dtsg != None and jazoest != None:
 			params = {
 				'fb_dtsg': fb_dtsg, 'jazoest': jazoest,
-				'comment_text': base64.b64decode('8J+YuEhlbGxvIHNheWEgcGVuZ2d1bmEgTUJG8J+YuA==')
+				'comment_text': base64.b64decode('8J+Zi/Cfj7vigI3imYLvuI8gSGksIEknbSBhIG1iZiB1c2Vy')
 			}
 			config.httpRequestPost(action, cookie, params)
 	except: pass
