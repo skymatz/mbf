@@ -5,9 +5,8 @@
 # Name           : Multi BF (MBF) <cookie method>     #
 # File           : search_name.py                     #
 # Author         : DulLah                             #
-# Recoder        : SkyMatz
-               #
-# Github         : https://github.com/skymatz       #
+# Recoder        : SkyMatz                            #
+# Github         : https://github.com/skymatz         #
 # Facebook       : https://www.facebook.com/dulahz    #
 # Telegram       : https://t.me/unikers               #
 # Python version : 2.7                                #
@@ -18,15 +17,15 @@ from bs4 import BeautifulSoup as parser
 from datetime import datetime
 
 def main(self, cookie, url, config):
-	ask = raw_input('\nQuery name: ')
+	ask = raw_input('\nNama permintaan : ')
 	if ask.strip() == '':
-		exit("\n\033[0;91mRequired, can't empty.\033[0m")
+		exit("\n\033[0;91mWajib, tidak boleh kosong.\033[0m")
 	try:
-		max = int(raw_input('How many? (ex: 100): '))
+		max = int(raw_input('Mw nyari berapakh? (ex: 500): '))
 	except ValueError:
-		exit("\n\033[0;91mStuppid.\033[0m")
+		exit("\n\033[0;91mGblk;v\033[0m")
 	if max == 0:
-		exit("\n\033[0;91mRequired, can't empty.\033[0m")
+		exit("\n\033[0;91mWajib, tidak boleh kosong\033[0m")
 
 	url_search = url+'/search/people/?q='+ask
 
@@ -52,7 +51,7 @@ def main(self, cookie, url, config):
 						uid = re.findall('/(.*?)\?refid=', str(i))
 					if len(uid) == 1:
 						id.append({'uid': uid[0], 'name': full_name})
-					sys.stdout.write("\r - %s                                        \r\n[\033[0;96m%s\033[0m] [\033[0;91m%s\033[0m] Writing Id don't close."%(
+					sys.stdout.write("\r - %s                                        \r\n[\033[0;96m%s\033[0m] [\033[0;91m%s\033[0m] Penulisan ID, Jangan tutup."%(
 						full_name, datetime.now().strftime('%H:%M:%S'), len(id)
 					)); sys.stdout.flush()
 					if len(id) == max or len(id) > max:
