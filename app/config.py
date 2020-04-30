@@ -26,11 +26,12 @@ class Config:
 
 	def banner(self):
 		return '''\n
-    }--------------------------------------------{
-}----------> Multi Brute Force Cookies Method <----------{
-    }--------------------------------------------{ v 1.0
-
-  coded by skymatz | fb.me/amttidz | github.com/skymatz
+    }--------------------------------------{
+}-----> Multi Brute Force Cookies Method <-----{
+    }--------------------------------------{
+    
+ • coded ./skymatz             • fb.me/amttidz
+ • github.com/skymatz          • version 1.0
 '''
 	def httpRequest(self, url, cookies):
 		try:
