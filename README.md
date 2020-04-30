@@ -2,8 +2,8 @@
 
 cookies method with python2 version
 
-## Command !
-```
+## Command
+```terminal
 pkg update && pkg upgrade
 pkg install python2
 pip2 install requests bs4
