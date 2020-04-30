@@ -5,9 +5,8 @@
 # Name           : Multi BF (MBF) <cookie method>     #
 # File           : friends_list.py                    #
 # Author         : DulLah                             #
-# Recoder        : SkyMatz
-              #
-# Github         : https://github.com/skymatz       #
+# Recoder        : SkyMatz                            #
+# Github         : https://github.com/skymatz         #
 # Facebook       : https://www.facebook.com/dulahz    #
 # Telegram       : https://t.me/unikers               #
 # Python version : 2.7                                #
